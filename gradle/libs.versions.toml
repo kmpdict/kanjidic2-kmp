@@ -1,0 +1,39 @@
+[versions]
+agp = "8.11.0"
+kotlin = "2.2.0"
+compose = "1.8.2"
+
+kotlinx-io = "0.8.0"
+
+benchmark = "0.4.14"
+
+xmldtd-kt = "0.0.3"
+kotlinpoet = "2.2.0"
+
+[libraries]
+kotlin-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+kotlinx-serialization-xml = { module = "io.github.pdvrieze.xmlutil:serialization", version = "0.91.1" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version = "1.10.2" }
+kotlinx-io-core = { module = "org.jetbrains.kotlinx:kotlinx-io-core", version.ref = "kotlinx-io" }
+
+androidx-test-core = { module = "androidx.test:core", version = "1.6.1" }
+androidx-test-runner = { module = "androidx.test:runner", version = "1.6.2" }
+
+kotlinx-benchmark-runtime = { module = "org.jetbrains.kotlinx:kotlinx-benchmark-runtime", version.ref = "benchmark" }
+
+android-libraryGradlePlugin = { module = "com.android.library:com.android.library.gradle.plugin", version.ref = "agp" }
+kotlin-multiplatformGradlePlugin = { module = "org.jetbrains.kotlin.multiplatform:org.jetbrains.kotlin.multiplatform.gradle.plugin", version.ref = "kotlin" }
+compose-gradlePlugin = { module = "org.jetbrains.compose:compose-gradle-plugin", version.ref = "compose" }
+
+boswelja-xmldtd = { module = "io.github.boswelja.xmldtd:codegen", version.ref = "xmldtd-kt" }
+
+[plugins]
+android-library = { id = "com.android.kotlin.multiplatform.library" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlinx-benchmark = { id = "org.jetbrains.kotlinx.benchmark", version.ref = "benchmark" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version = "1.23.8" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+jetbrains-compose = { id = "org.jetbrains.compose", version.ref = "compose" }
