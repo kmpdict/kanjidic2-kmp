@@ -6,7 +6,7 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.kotlinx.benchmark)
     alias(libs.plugins.detekt)
-    id("com.boswelja.jmdict.generator")
+    id("com.boswelja.kanjidict.generator")
     id("com.boswelja.publish")
 }
 
@@ -18,7 +18,7 @@ kotlin {
         }
     }
     androidLibrary {
-        namespace = "com.boswelja.jmdict"
+        namespace = "com.boswelja.kanjidict"
         compileSdk = 36
         minSdk = 23
 
@@ -32,6 +32,8 @@ kotlin {
             implementation(compose.components.resources)
             implementation(compose.runtime)
             implementation(libs.kotlinx.serialization.xml)
+            implementation(libs.okio.core)
+            implementation(libs.okio.zstd)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -56,8 +58,8 @@ detekt {
     basePath = rootDir.absolutePath
 }
 
-jmDict {
-    packageName = "com.boswelja.jmdict"
+kanjiDict {
+    packageName = "com.boswelja.kanjidict"
 }
 
 benchmark {
@@ -68,15 +70,15 @@ benchmark {
 
 publish {
     description = "Pre-packaged Japanese-Multilingual dictionary for all your Kotlin Multiplatform needs!"
-    repositoryUrl = "https://github.com/kmpdict/jmdict-kmp"
+    repositoryUrl = "https://github.com/kmpdict/kanjidic2-kmp"
     license = "CC-BY-SA-4.0"
 }
 
 afterEvaluate {
     tasks.withType(org.gradle.jvm.tasks.Jar::class) {
         if (archiveClassifier.get() == "sources") {
-            dependsOn("generateJmDictDataClasses")
-            dependsOn("generateJmDictMetadataObject")
+            dependsOn("generateKanjiDictDataClasses")
+            dependsOn("generateKanjiDictMetadataObject")
         }
     }
 }
