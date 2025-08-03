@@ -1,6 +1,5 @@
 package com.boswelja.kanjidict
 
-import io.github.boswelja.jmdict.jmdict.generated.resources.Res
 import io.github.boswelja.jmdict.kanjidic2.generated.resources.Res
 import kotlinx.benchmark.Benchmark
 import kotlinx.benchmark.Scope
