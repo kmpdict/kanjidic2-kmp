@@ -1,7 +1,7 @@
 package com.boswelja.kanjidict
 
 import com.squareup.zstd.okio.zstdDecompress
-import io.github.boswelja.jmdict.kanjidic2.generated.resources.Res
+import io.github.boswelja.kanjidic2.kanjidic2.generated.resources.Res
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.withContext
@@ -18,7 +18,7 @@ import okio.buffer
 @OptIn(ExperimentalXmlUtilApi::class)
 internal val Serializer = XML {
     defaultPolicy {
-        pedantic = true
+        pedantic = false
         autoPolymorphic = true
         throwOnRepeatedElement = true
         isStrictBoolean = true
