@@ -1,3 +1,5 @@
+# ⚠️ This repository is archived. Development has moved to https://github.com/kmpdict/edrdg-kmp
+
 # KanjiDic2-KMP
 
 Kotlin Multiplatform, pre-packaged Kanji dictionary!
